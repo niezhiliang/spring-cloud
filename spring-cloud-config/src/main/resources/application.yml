@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://git.huluwa.cc/liumapp/electronic-contract-sign-online.git
+          username: nzl
+          password: nzl199595
+          search-paths: localconf/zwd
+        native:
+          search-locations: /Users/suyu/Desktop/spring-cloud-demo-FinchleySR2/conf
+    bus:
+      trace:
+        enabled: true
+  profiles:
+    active: native
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  port: 2222

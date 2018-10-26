@@ -1,0 +1,20 @@
+zuul:
+  routes:
+    api-a:
+      path: /server-a/**
+      serviceId: server-a
+    api-b:
+      path: /server-b/**
+      serviceId: server-b
+
+ribbon:
+  ConnectTimeout: 25000
+  ReadTimeout: 25000
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
